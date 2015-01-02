@@ -38,16 +38,16 @@ app.AppView = Backbone.View.extend({
 
   // 下端に表示される統計情報を更新
   render: function () {
-    var completed = app.Todos.complted().length;
+    var completed = app.Todos.completed().length;
     var remaining = app.Todos.remaining().length;
 
-    if (app.Todos.lenght) {
+    if (app.Todos.length) {
       this.$main.show();
       this.$footer.show();
 
       this.$footer.html(this.statsTemplate({
         completed: completed,
-        remaining: rema
+        remaining: remaining
       }));
 
       this.$('#filters li a')
