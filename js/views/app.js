@@ -12,7 +12,7 @@ app.AppView = Backbone.View.extend({
 
   // 項目の新規作成と完了した項目の消去に対応するイベント
   events: {
-    'keypress #new-todo': 'creteOnEnter',
+    'keypress #new-todo': 'createOnEnter',
     'click #clear-completed': 'clearCompleted',
     'click #toggle-all': 'toggleAllComplete'
   },
