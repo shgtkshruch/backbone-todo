@@ -50,7 +50,7 @@ app.TodoView = Backbone.View.extend({
     );
   },
 
-  /// モデルのCompleted属性をトグル
+  // モデルのCompleted属性をトグル
   togglecompleted: function () {
     this.model.toggle();
   },
