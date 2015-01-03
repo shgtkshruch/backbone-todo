@@ -1,1 +1,64 @@
-My Page
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Backbobe.js - TodoMVC</title>
+    <link rel="stylesheet" href="lib/css/base.css" type="text/css" media="all" charset="utf-8">
+  </head>
+  <body>
+
+    <section id="todoapp">
+      <header id="header">
+        <h1>Todo List</h1>
+        <input id="new-todo" placeholder="することを入力してください" autofocus>
+      </header>
+      <section id="main">
+        <input id="toggle-all" type="checkbox">
+        <label for="toggle-all">すべてを完了済みにする</label>
+        <ul id="todo-list"></ul>
+      </section>
+      <footer id="footer"></footer>
+    </section>
+
+    <div id="info">
+     <p>項目はダブルクリックすると編集できます</p>
+     <p>作: <a href="https://github.com/addyosmani">Addy Osmani</a></p>
+     <p><a href="http://todomvc.com">TodoMVC</a>の一部として開発</p>
+    </div>
+
+    <script type="text/template" id="item-template">
+      <div class="view">
+      	<input class="toggle" type="checkbox" <%=completed ? 'checked' : '' %>>
+      	<label><%- title %></label>
+      	<button class="destroy"></button>
+      </div>
+      <input class="edit" value="<%- title %>">
+    </script>
+
+    <script type="text/template" id="stats-template">
+        <span id="todo-count">残り<strong><%= remaining %></strong>件</span>
+        <ul id="filters">
+          <li>
+          	<a href="#/">すべて</a>
+            <a href="#/active">未了</a>
+          	<a href="#/completed">完了済み</a>
+          </li>
+        </ul>
+
+        <% if (completed) { %>
+          <button id="clear-completed">完了済み項目を消去 (<%= completed %>件)</button>
+        <% } %>
+    </script>
+
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/underscore-min.js"></script>
+    <script src="lib/js/backbone-min.js"></script>
+    <script src="lib/js/backbone.localStorage-min.js"></script>
+    <script src="js/models/todo.js"></script>
+    <script src="js/collections/todo.js"></script>
+    <script src="js/views/todo.js"></script>
+    <script src="js/views/app.js"></script>
+    <script src="js/routers/router.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
